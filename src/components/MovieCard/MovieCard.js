@@ -11,7 +11,7 @@ import {
 export default function MovieCard({ movie }) {
   const {
     original_title,
-    // genres,
+    genres,
     overview,
     popularity,
     poster_path,
@@ -41,12 +41,12 @@ export default function MovieCard({ movie }) {
             <InfoType>Popularity:</InfoType> {popularity}
           </Item>
           <Item>
-            {' '}
             <InfoType>User score:</InfoType> {vote_average}
           </Item>
-          {/* <li>
-          <p>{genres.map(genre => genre.name).join(', ')}</p>
-        </li> */}
+          <Item>
+          <InfoType>Genres:</InfoType>
+            {genres?.map(genre => genre.name).join(', ')}
+          </Item>
         </List>
       </div>
     </Card>
