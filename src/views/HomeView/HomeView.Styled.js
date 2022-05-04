@@ -12,6 +12,12 @@ color: black;
 font-size: 21px;
 `;
 
+export const Movie = styled.li`
+text-decoration: none;
+color: black;
+font-size: 21px;
+`;
+
 export const Item = styled.li`
   :not(:last-child) {
     margin-bottom: 8px;

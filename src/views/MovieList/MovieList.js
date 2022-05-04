@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Movie, Film } from 'views/HomeView/HomeView.Styled';
 
 export default function MovieList({ movie }) {
   return (
-    <li>
-      <Link to={`${movie.id}`}>
+    <Movie>
+      <Film to={`${movie.id}`}>
         <p>{movie.title}</p>
-      </Link>
-    </li>
+      </Film>
+    </Movie>
   );
 }
