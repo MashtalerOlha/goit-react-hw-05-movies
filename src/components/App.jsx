@@ -1,20 +1,26 @@
 import { Routes, Route } from 'react-router-dom';
+import MovieDetail from 'views/MovieDetailsPage';
+import { NotFoundView } from 'views/NotFoundView';
+import { lazy } from 'react';
 import Layout from './Layout/Layout';
-import HomeView from 'views/HomeView';
-import SearchMovies from 'views/SearchMovies';
+
+const HomeView = lazy(() => import('../views/HomeView'));
+const SearchMovies = lazy(() => import('../views/SearchMovies'));
+const Cast = lazy(() => import('views/Cast'));
+const Reviews = lazy(() => import('../views/Reviews'));
 
 export const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<HomeView />} />
-        <Route path="movies" element={<SearchMovies />} />
-        <Route path="movies/:movieId">
-          <Route path="cast" />
-          <Route path="reviews" />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomeView />} />
+          <Route path="movies" element={<SearchMovies />} />
+          <Route path="movies/:movieId" element={<MovieDetail />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+          <Route path="*" element={<NotFoundView />} />
         </Route>
-        <Route path="*" />
-      </Route>
-    </Routes>
+      </Routes>
   );
 };
