@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import * as trendMovieApi from '../services/api';
-import PageHeading from '../components/PageHeading/PageHeading';
+import { FilmList, Film, Item } from './HomeView.Styled';
+
+import * as trendMovieApi from '../../services/api';
+import PageHeading from '../../components/PageHeading/PageHeading';
 
 export default function HomeView() {
   const [movies, setMovies] = useState(null);
@@ -16,13 +17,13 @@ export default function HomeView() {
     <>
       <PageHeading> Trending today </PageHeading>
       {movies && (
-        <ul>
+        <FilmList>
           {movies.map(movie => (
-            <li key={movie.id}>
-              <Link to={`movies/${movie.id}`}> {movie.original_title}</Link>
-            </li>
+            <Item key={movie.id}>
+              <Film to={`movies/${movie.id}`}> {movie.original_title}</Film>
+            </Item>
           ))}
-        </ul>
+        </FilmList>
       )}
     </>
   );

@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom';
+import PageHeading from '../components/PageHeading/PageHeading';
+
 export const NotFoundView = () => {
   return (
-    <h1>
-      404 page not found, go to{' '}
-      <Link to="/">Home Page</Link>
-    </h1>
+    <PageHeading>
+      404 page not found...
+    </PageHeading>
   );
 };
