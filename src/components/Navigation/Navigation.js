@@ -1,14 +1,10 @@
-import { NavLink } from 'react-router-dom';
+import { NavigationLink, Wrapper } from './Navigation.styled';
 
 export default function Navigation() {
   return (
-    <nav>
-      <NavLink to="/">
-        Home
-      </NavLink>
-      <NavLink to="/movies">
-        Movies
-      </NavLink>
-    </nav>
+    <Wrapper>
+      <NavigationLink to="/">Home</NavigationLink>
+      <NavigationLink to="/movies">Movies</NavigationLink>
+    </Wrapper>
   );
 }
