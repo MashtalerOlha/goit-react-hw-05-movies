@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { fetchSearchMovies } from '../services/api';
-import MovieList from './MovieList/MovieList';
+import { fetchSearchMovies } from '../../services/api';
+import MovieList from '../../views/MovieList/MovieList';
+import { SearchButton, SearchForm, Input, FilmList } from './SearchForm.Styled';
+
 
 export default function MoviesPage() {
   const [userInput, setUserInput] = useState('');
@@ -26,22 +28,22 @@ export default function MoviesPage() {
 
   return (
     <>
-      <form onSubmit={onFormSubmit}>
-        <input
+      <SearchForm onSubmit={onFormSubmit}>
+        <Input
           onChange={handleInputChange}
           value={userInput}
           type="text"
           autoComplete="off"
-          autoFocus
-          placeholder="Search images and photos"
+          placeholder="Search movie"
+          autoFocus="off"
         />
-        <button type="submit">Find movie</button>
-      </form>
-      <ul>
+        <SearchButton type="submit">Search</SearchButton>
+      </SearchForm>
+      <FilmList>
         {movies.map(movie => {
           return <MovieList movie={movie} key={movie.id} />;
         })}
-      </ul>
+      </FilmList>
     </>
   );
 }

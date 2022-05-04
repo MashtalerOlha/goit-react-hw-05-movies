@@ -1,9 +1,20 @@
 import styled from '@emotion/styled';
 
 export const SearchForm = styled.form`
-  color: black;
+  margin: 35px;
 `;
 
 export const SearchButton = styled.button`
-  color: black;
+  margin: 4px;
+  background: ghostwhite;
+  border: outset;
+`;
+
+export const Input = styled.input`
+  border: outset;
+  width: 250px;
+`;
+
+export const FilmList = styled.ul`
+  list-style: circle;
 `;
