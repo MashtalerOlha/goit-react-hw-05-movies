@@ -1,5 +1,5 @@
-// import { Heading } from './PageHeading.styled';
+import { Title } from "./PageHeading.Styled";
 
 export default function PageHeading({ children }) {
-  return <h1>{children}</h1>;
+  return <Title>{children}</Title>;
 }
