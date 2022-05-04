@@ -10,12 +10,6 @@ export default function MovieDetail() {
 
   const { movieId } = useParams();
 
-  // useEffect(() => {
-  //   fetchMovieById(movieId).then(response => {
-  //     setMovie(response);
-  //   });
-  // }, [movieId]);
-
   useEffect(() => {
     async function fetchItem() {
       try {
