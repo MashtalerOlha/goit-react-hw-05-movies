@@ -18,17 +18,23 @@ export function fetchSearchMovies(query) {
   return fetchWithErrorHandling(url);
 }
 
-export function fetchMovieById(id){
+export function fetchMovieById(id) {
   const url = new URL(`3/movie/${id}?api_key=${KEY}&language=en-US`, BASE_URL);
   return fetchWithErrorHandling(url);
 }
 
 export function fetchMovieCast(id) {
-  const url = new URL(`3/movie/${id}/credits?api_key=${KEY}&language=en-US`, BASE_URL);
+  const url = new URL(
+    `3/movie/${id}/credits?api_key=${KEY}&language=en-US`,
+    BASE_URL
+  );
   return fetchWithErrorHandling(url);
 }
 
 export function fetchMovieReviews(id) {
-  const url = new URL(`3/movie/${id}/reviews?api_key=${KEY}&language=en-US&page=1`, BASE_URL);
+  const url = new URL(
+    `3/movie/${id}/reviews?api_key=${KEY}&language=en-US&page=1`,
+    BASE_URL
+  );
   return fetchWithErrorHandling(url);
 }
