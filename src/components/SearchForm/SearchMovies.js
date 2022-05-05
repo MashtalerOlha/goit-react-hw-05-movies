@@ -12,36 +12,22 @@ export default function MoviesPage() {
 
   const handleInputChange = e => {
     setUserInput(e.currentTarget.value);
-    setSearchParams({ query: e.currentTarget.value });
   };
 
   useEffect(() => {
-    if (query) {
-      fetchSearchMovies(query).then(({ results }) => {
-        setMovies(results);
-      });
-    }
-
     if (!query) {
-      // delete query param
-      searchParams.delete('query');
-
-      // update state after
-      setSearchParams(searchParams);
-
-      // clear movies list
-      setMovies([]);
+      return;
     }
-  }, [query, setSearchParams, searchParams]);
+
+    fetchSearchMovies(query).then(({ results }) => {
+      setMovies(results);
+    });
+    reset();
+  }, [query]);
 
   const onFormSubmit = e => {
     e.preventDefault();
-
-    fetchSearchMovies(userInput).then(({ results }) => {
-      setMovies(results);
-    });
-
-    reset();
+    setSearchParams({ query: userInput });
   };
 
   const reset = () => {

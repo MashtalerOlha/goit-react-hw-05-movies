@@ -1,4 +1,5 @@
-import { useNavigate } from 'react-router-dom';
+import { useRef } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import {
   Card,
   GoBack,
@@ -18,11 +19,18 @@ export default function MovieCard({ movie }) {
     vote_average,
   } = movie;
 
+  const location = useLocation();
   const navigate = useNavigate();
+
+  const currentLocation = useRef(location);
+  
+  const goBack = () => {
+    navigate(currentLocation?.current?.state?.from ?? '/');
+  };
 
   return (
     <Card>
-      <GoBack onClick={() => navigate(-1)}>Go back</GoBack>
+      <GoBack onClick={goBack}>Go back</GoBack>
       <img
         src={
           poster_path
