@@ -11,16 +11,11 @@ export default function MovieDetail() {
   const { movieId } = useParams();
 
   useEffect(() => {
-    async function fetchItem() {
-      try {
-        const movie = await fetchMovieById(movieId);
-        setMovie(movie);
-      } catch (error) {
-        alert(error);
-      }
-    }
-    fetchItem();
+    fetchMovieById(movieId).then(response => {
+      setMovie(response);
+    });
   }, [movieId]);
+
   return (
     <>
       <MovieCard movie={movie} />
