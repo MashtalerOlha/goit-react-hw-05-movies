@@ -23,7 +23,7 @@ export default function MovieCard({ movie }) {
   const navigate = useNavigate();
 
   const currentLocation = useRef(location);
-  
+
   const goBack = () => {
     navigate(currentLocation?.current?.state?.from ?? '/');
   };
@@ -52,7 +52,7 @@ export default function MovieCard({ movie }) {
             <InfoType>User score:</InfoType> {vote_average}
           </Item>
           <Item>
-          <InfoType>Genres:</InfoType>
+            <InfoType>Genres:</InfoType>
             {genres?.map(genre => genre.name).join(', ')}
           </Item>
         </List>

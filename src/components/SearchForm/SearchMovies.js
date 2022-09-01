@@ -36,6 +36,7 @@ export default function MoviesPage() {
 
   return (
     <>
+    <div>
       <SearchForm onSubmit={onFormSubmit}>
         <Input
           onChange={handleInputChange}
@@ -52,6 +53,7 @@ export default function MoviesPage() {
           return <MovieList movie={movie} key={movie.id} />;
         })}
       </FilmList>
+      </div>
     </>
   );
 }

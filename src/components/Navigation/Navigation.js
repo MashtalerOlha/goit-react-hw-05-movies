@@ -4,7 +4,7 @@ export default function Navigation() {
   return (
     <Wrapper>
       <NavigationLink to="/">Home</NavigationLink>
-      <NavigationLink to="/movies">Movies</NavigationLink>
+      <NavigationLink to="/movies">Movie search</NavigationLink>
     </Wrapper>
   );
 }

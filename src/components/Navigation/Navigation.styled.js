@@ -9,6 +9,9 @@ export const NavigationLink = styled(NavLink)`
 `;
 
 export const Wrapper = styled.nav`
+display: flex;
+justify-content: space-between;
 padding: 24px;
-box-shadow: 0px 6px 11px 5px rgb(239, 241, 242);
+box-shadow: rgb(17 17 26 / 10%) 0px 1px 0px;
+background: #f8f8f8;
 `;

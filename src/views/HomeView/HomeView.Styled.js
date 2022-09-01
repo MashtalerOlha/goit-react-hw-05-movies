@@ -2,34 +2,32 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
 export const FilmList = styled.ul`
-list-style: circle;
-list-style-position: inside;
-}`;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+`;
 
 export const Film = styled(Link)`
-text-decoration: none;
-color: black;
-font-size: 21px;
+  text-decoration: none;
 `;
 
 export const Movie = styled.li`
-text-decoration: none;
-color: black;
-font-size: 21px;
+  text-decoration: none;
+  max-width: 300px;
+  margin-bottom: 10px;
+  border: 2px solid #868686;
 `;
 
 export const Item = styled.li`
-  :not(:last-child) {
-    margin-bottom: 8px;
-  }
+  max-width: 300px;
+  border: 2px solid #868686;
+  margin-bottom: 11px;
+
 `;
 
-
-// margin: 50px;
-//     display: flex;
-//     gap: 25px;
-
-
-// position: absolute;
-// top: 109px;
-// left: 51px;
+export const MovieTitle = styled.p`
+  color: black;
+  font-size: 21px;
+  text-align: center;
+`;

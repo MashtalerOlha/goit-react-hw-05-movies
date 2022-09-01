@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieCast } from 'services/api';
-import { ProfileImage, List } from './Cast.Styled';
+import { ProfileImage, List, Item, Text } from './Cast.Styled';
 
 export default function Cast() {
   const [cast, setCast] = useState([]);
@@ -17,7 +17,7 @@ export default function Cast() {
     <List>
       {cast.map(({ original_name, character, profile_path, cast_id }) => {
         return (
-          <li key={cast_id}>
+          <Item key={cast_id}>
             <ProfileImage
               src={
                 profile_path
@@ -26,9 +26,9 @@ export default function Cast() {
               }
               alt={original_name}
             />
-            <p>{original_name}</p>
-            <p>Character: {character}</p>
-          </li>
+            <Text>{original_name}</Text>
+            <Text>Character: {character}</Text>
+          </Item>
         );
       })}
     </List>
