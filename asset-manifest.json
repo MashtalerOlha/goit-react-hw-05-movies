@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.344d5592.js",
-    "static/js/340.8bc0a055.chunk.js": "/goit-react-hw-05-movies/static/js/340.8bc0a055.chunk.js",
-    "static/js/288.fa3e297c.chunk.js": "/goit-react-hw-05-movies/static/js/288.fa3e297c.chunk.js",
-    "static/js/217.963a500a.chunk.js": "/goit-react-hw-05-movies/static/js/217.963a500a.chunk.js",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.f60c040f.js",
+    "static/js/340.21e8d50c.chunk.js": "/goit-react-hw-05-movies/static/js/340.21e8d50c.chunk.js",
+    "static/js/288.7608bd20.chunk.js": "/goit-react-hw-05-movies/static/js/288.7608bd20.chunk.js",
+    "static/js/217.d05fa26f.chunk.js": "/goit-react-hw-05-movies/static/js/217.d05fa26f.chunk.js",
     "static/js/357.4f1172fc.chunk.js": "/goit-react-hw-05-movies/static/js/357.4f1172fc.chunk.js",
     "index.html": "/goit-react-hw-05-movies/index.html",
     "main.7acaea2f.css.map": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css.map",
-    "main.344d5592.js.map": "/goit-react-hw-05-movies/static/js/main.344d5592.js.map",
-    "340.8bc0a055.chunk.js.map": "/goit-react-hw-05-movies/static/js/340.8bc0a055.chunk.js.map",
-    "288.fa3e297c.chunk.js.map": "/goit-react-hw-05-movies/static/js/288.fa3e297c.chunk.js.map",
-    "217.963a500a.chunk.js.map": "/goit-react-hw-05-movies/static/js/217.963a500a.chunk.js.map",
+    "main.f60c040f.js.map": "/goit-react-hw-05-movies/static/js/main.f60c040f.js.map",
+    "340.21e8d50c.chunk.js.map": "/goit-react-hw-05-movies/static/js/340.21e8d50c.chunk.js.map",
+    "288.7608bd20.chunk.js.map": "/goit-react-hw-05-movies/static/js/288.7608bd20.chunk.js.map",
+    "217.d05fa26f.chunk.js.map": "/goit-react-hw-05-movies/static/js/217.d05fa26f.chunk.js.map",
     "357.4f1172fc.chunk.js.map": "/goit-react-hw-05-movies/static/js/357.4f1172fc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.344d5592.js"
+    "static/js/main.f60c040f.js"
   ]
 }
