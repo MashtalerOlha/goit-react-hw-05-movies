@@ -46,3 +46,9 @@ export const FilmList = styled.ul`
   margin-bottom: 6px;
 
 `;
+
+export const NotFound = styled.p`
+  font-family: 'Koulen';
+  font-size: 35px;
+  text-align: center;
+`

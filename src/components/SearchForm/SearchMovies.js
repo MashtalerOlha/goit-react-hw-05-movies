@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { fetchSearchMovies } from '../../services/api';
 import MovieList from '../../views/MovieList/MovieList';
-import { SearchButton, SearchForm, Input, FilmList } from './SearchForm.Styled';
+import {NotFound, SearchButton, SearchForm, Input, FilmList } from './SearchForm.Styled';
 
 export default function MoviesPage() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -48,11 +48,14 @@ export default function MoviesPage() {
         />
         <SearchButton type="submit">Search</SearchButton>
       </SearchForm>
+      {
+        movies.length ?
       <FilmList>
         {movies.map(movie => {
           return <MovieList movie={movie} key={movie.id} />;
         })}
       </FilmList>
+      : <NotFound>Not found, try again!</NotFound> }
       </div>
     </>
   );
