@@ -2,12 +2,20 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { fetchSearchMovies } from '../../services/api';
 import MovieList from '../../views/MovieList/MovieList';
-import {NotFound, SearchButton, SearchForm, Input, FilmList } from './SearchForm.Styled';
+import {
+  NotFound,
+  SearchButton,
+  SearchForm,
+  Input,
+  FilmList,
+} from './SearchForm.Styled';
 
 export default function MoviesPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [userInput, setUserInput] = useState('');
   const [movies, setMovies] = useState([]);
+  const [totalResult, setTotalResult] = useState();
+
   const query = searchParams.get('query');
 
   const handleInputChange = e => {
@@ -19,7 +27,8 @@ export default function MoviesPage() {
       return;
     }
 
-    fetchSearchMovies(query).then(({ results }) => {
+    fetchSearchMovies(query).then(({ results, total_results }) => {
+      setTotalResult(total_results);
       setMovies(results);
     });
     reset();
@@ -36,26 +45,29 @@ export default function MoviesPage() {
 
   return (
     <>
-    <div>
-      <SearchForm onSubmit={onFormSubmit}>
-        <Input
-          onChange={handleInputChange}
-          value={userInput}
-          type="text"
-          autoComplete="off"
-          placeholder="Search movie"
-          autoFocus="off"
-        />
-        <SearchButton type="submit">Search</SearchButton>
-      </SearchForm>
-      {
-        movies.length ?
-      <FilmList>
-        {movies.map(movie => {
-          return <MovieList movie={movie} key={movie.id} />;
-        })}
-      </FilmList>
-      : <NotFound>Not found, try again!</NotFound> }
+      <div>
+        <SearchForm onSubmit={onFormSubmit}>
+          <Input
+            onChange={handleInputChange}
+            value={userInput}
+            type="text"
+            autoComplete="off"
+            placeholder="Search movie"
+            autoFocus="off"
+          />
+          <SearchButton type="submit">Search</SearchButton>
+        </SearchForm>
+
+        <FilmList>
+          {movies.map(movie => {
+            return <MovieList movie={movie} key={movie.id} />;
+          })}
+        </FilmList>
+        {totalResult === 0 ? (
+          <NotFound>Not found, try again</NotFound>
+        ) : (
+          <p></p>
+        )}
       </div>
     </>
   );

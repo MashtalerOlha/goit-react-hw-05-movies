@@ -6,7 +6,6 @@ export const SearchForm = styled.form`
   align-items: center;
   margin-top: 35px;
   margin-bottom: 35px;
-
 `;
 
 export const SearchButton = styled.button`
